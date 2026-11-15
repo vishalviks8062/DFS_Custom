@@ -1,0 +1,42 @@
+syntax = "proto3";
+package dfs;
+
+service FileService{
+    rpc Store(stream FileChunk) returns (StoreResponse);
+    rpc Fetch(FileRequest) returns (stream FileChunk);
+    rpc Delete(FileRequest) returns (DeleteResponse);
+    rpc List(ListRequest) returns (ListResponse);
+    rpc Stat(FileRequest) returns (FileInfo);
+}
+
+message FileChunk {
+    string filename =1;
+    bytes data = 2;
+}
+
+message FileRequest{
+    string filename = 1;
+}
+
+message StoreResponse {
+    string filename =1;
+    int64 modified_time =2;
+}
+
+message DeleteResponse {
+    string filename =1;
+}
+
+message ListRequest {
+}
+
+message FileInfo {
+    string filename =1;
+    int64 size =2;
+    int64 modified_time =3;
+    int64 created_time =4;
+}
+
+message ListResponse{
+    repeated FileInfo files =1;
+}

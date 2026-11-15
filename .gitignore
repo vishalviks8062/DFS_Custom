@@ -1,0 +1,23 @@
+# CMake build artifacts
+build/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+compile_commands.json
+
+# Generated protobuf and gRPC files
+generated/
+
+# Local file storage
+client_files/
+server_files/
+
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Executables
+dfs_server
+dfs_client
