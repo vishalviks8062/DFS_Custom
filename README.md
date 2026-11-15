@@ -144,11 +144,6 @@ manually edit generated code. The generated, build, and storage directories
 exist locally but are ignored by Git and should not be expected in a fresh
 clone.
 
-**Filename caveat:** Git currently tracks both `README.md` and `readMe.md`.
-On a case-insensitive macOS filesystem these names resolve to one file; on a
-case-sensitive filesystem they are distinct. The tree above shows the local
-view. This documentation update does not resolve that Git naming collision.
-
 ## 5. Protocol Buffers and RPC Definitions
 
 The schema uses `proto3`, package `dfs`, and service `FileService`:
